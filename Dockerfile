@@ -253,6 +253,7 @@ RUN zypper --non-interactive update && \
     rpm-build \
     zile \
     crudini \
+    xmlstarlet \
     && zypper --non-interactive clean
 
 RUN zypper --non-interactive update && \
