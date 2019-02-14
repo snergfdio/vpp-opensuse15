@@ -254,6 +254,7 @@ RUN zypper --non-interactive update && \
     zile \
     crudini \
     xmlstarlet \
+    ninja \
     && zypper --non-interactive clean
 
 RUN zypper --non-interactive update && \
@@ -265,8 +266,8 @@ RUN zypper addrepo -G -f -c http://download.opensuse.org/repositories/Java:/boot
 
 RUN zypper --non-interactive update && \
     zypper --non-interactive install gcc6 \
-#    libboost_headers-devel \
-#    libboost_thread-devel \
+    libboost_headers-devel \
+    libboost_thread-devel \
     mbedtls-devel \
     && zypper --non-interactive clean
 
@@ -279,7 +280,7 @@ ENV LANG='en_US.UTF-8' LANGUAGE='en_US:en'
 #RUN gem install rake
 
 RUN gem install --no-format-executable package_cloud facter
-#RUN crudini --set /usr/lib/os-release '' ID '"opensuse"'
+RUN crudini --set /usr/lib/os-release '' ID '"opensuse-leap"'
 
 RUN mkdir -p /w/workspace
 RUN mkdir -p /w/Downloads
