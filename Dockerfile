@@ -255,6 +255,7 @@ RUN zypper --non-interactive update && \
     crudini \
     xmlstarlet \
     ninja \
+    python2-ply \
     && zypper --non-interactive clean
 
 RUN zypper --non-interactive update && \
